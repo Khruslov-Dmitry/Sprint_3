@@ -10,11 +10,12 @@ public class NewCourierWithoutLogin {
     private String firstName;
 
     public NewCourierWithoutLogin(String password, String firstName) {
+
         this.password = password;
         this.firstName = firstName;
     }
 
-    public static NewCourierWithoutLogin getRandom() {
+    public static NewCourierWithoutLogin getRandomCourierWithoutLogin() {
 
         String password = RandomStringUtils.randomAlphanumeric(10);
         String firstName = RandomStringUtils.randomAlphanumeric(10);

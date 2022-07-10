@@ -4,25 +4,22 @@ import lombok.Data;
 import org.apache.commons.lang3.RandomStringUtils;
 
 @Data
-public class NewCourier {
+public class NewCourierForLogin {
 
     private String login;
     private String password;
-    private String firstName;
 
-    public NewCourier(String login, String password, String firstName) {
+    public NewCourierForLogin(String login, String password) {
 
         this.login = login;
         this.password = password;
-        this.firstName = firstName;
     }
 
-    public static NewCourier getRandom() {
+    public static NewCourierForLogin getRandom() {
 
         String login = RandomStringUtils.randomAlphanumeric(10);
         String password = RandomStringUtils.randomAlphanumeric(10);
-        String firstName = RandomStringUtils.randomAlphanumeric(10);
 
-        return new NewCourier(login, password, firstName);
+        return new NewCourierForLogin(login, password);
     }
 }
