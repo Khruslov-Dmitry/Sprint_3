@@ -1,0 +1,10 @@
+ru\yandex\scooter\api\pojo\CourierData.class
+ru\yandex\scooter\api\pojo\NewCourierWithoutFirstName.class
+ru\yandex\scooter\api\pojo\CourierDataWithoutLogin.class
+ru\yandex\scooter\api\pojo\CourierDataWithoutPassword.class
+ru\yandex\scooter\api\pojo\NewCourier.class
+ru\yandex\scooter\api\pojo\NewCourierWithoutLogin.class
+ru\yandex\scooter\api\pojo\NewCourierForLogin.class
+ru\yandex\scooter\api\pojo\CourierClient.class
+ru\yandex\scooter\api\pojo\NewCourierWithoutPassword.class
+ru\yandex\scooter\api\pojo\OrdersClient.class
