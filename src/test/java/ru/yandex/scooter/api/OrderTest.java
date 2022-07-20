@@ -1,36 +1,42 @@
 package ru.yandex.scooter.api;
 
-import org.junit.Before;
 import org.junit.Test;
-import ru.yandex.scooter.api.pojo.NewOrder;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import ru.yandex.scooter.api.pojo.OrdersClient;
 
+import java.io.File;
+
+import static org.junit.Assert.assertEquals;
+
+@RunWith(Parameterized.class)
 public class OrderTest {
 
-    private OrdersClient ordersClient;
+    private static File json = null;
+    private final int expected;
 
-    @Before
-    public void setUp() {
+    public OrderTest(File json, int expected) {
 
-        ordersClient = new OrdersClient();
+        OrderTest.json = json;
+        this.expected = expected;
+    }
+
+    @Parameterized.Parameters
+    public static Object[][] orderData() {
+
+        return new Object[][] {
+                {json = new File("src/test/resources/orderBLACK.json"), 201},
+                {json = new File("src/test/resources/orderGRAY.json"), 201},
+                {json = new File("src/test/resources/orderBothColors.json"), 201},
+                {json = new File("src/test/resources/orderNoColor.json"), 201},
+        };
     }
 
     // тест на создание нового заказа
     @Test
     public void createNewOrder() {
 
-        NewOrder newOrder = new NewOrder(
-                "Naruto",
-                "Uchiha",
-                "Konoha, 142 apt.",
-                4,
-                "+7 800 355 35 35",
-                5,
-                "2022-08-08",
-                "Saske, come back to Konoha",
-                "BLACK"
-
-        );
-        int orderTrackNumber = ordersClient.create(newOrder);
+        int actual = OrdersClient.create(json);
+        assertEquals(expected, actual);
     }
 }
