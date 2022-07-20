@@ -23,4 +23,18 @@ public class OrdersClient {
                 .extract()
                 .statusCode();
     }
+
+    public static void getOrderList() {
+
+        given().log().all()
+                .header("Content-type", "application/json")
+                .baseUri(BASE_URL)
+                .when()
+                .get(ORDERS)
+                .then().log().all()
+                .assertThat()
+                .statusCode(200)
+                .extract()
+                .path("orders");
+    }
 }
