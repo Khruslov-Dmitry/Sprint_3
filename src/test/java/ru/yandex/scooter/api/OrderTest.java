@@ -1,5 +1,6 @@
 package ru.yandex.scooter.api;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -32,8 +33,8 @@ public class OrderTest {
         };
     }
 
-    // тест на создание нового заказа
     @Test
+    @DisplayName("параметризованный тест создания заказа")
     public void createNewOrder() {
 
         int actual = OrdersClient.create(json);
