@@ -1,13 +1,20 @@
 package ru.yandex.scooter.api;
 
 import io.qameta.allure.junit4.DisplayName;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import ru.yandex.scooter.api.pojo.*;
+import ru.yandex.scooter.api.client.CourierClient;
+import ru.yandex.scooter.api.model.CourierData;
+import ru.yandex.scooter.api.util.CourierDataGenerator;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CourierTest {
 
     private CourierClient courierClient;
+    private int courierId;
 
     @Before
     public void setUp() {
@@ -15,97 +22,120 @@ public class CourierTest {
         courierClient = new CourierClient();
     }
 
-    @Test
-    @DisplayName("тест на создание нового курьера и последующий логин")
-    public void createNewCourier() {
+    @After
+    public void tearDown() {
 
-        NewCourier newCourier = NewCourier.getRandom();
-        courierClient.create(newCourier);
-
-        CourierData courierData = CourierData.from(newCourier);
-        int courierId = courierClient.login(courierData);
-
-        courierClient.delete(courierId);
+        courierClient.deleteCourier(courierId);
     }
 
     @Test
-    @DisplayName("тест на невозможность создания 2 одинаковых курьеров")
+    @DisplayName("Тест на создание нового курьера и последующий логин")
+    public void checkCourierCreationAndLogin() {
+
+        CourierDataGenerator newCourier = CourierDataGenerator.getRandomCourier();
+        boolean created = courierClient.createCourier(newCourier);
+
+        CourierData courierData = CourierData.from(newCourier);
+        courierId = courierClient.login(courierData);
+
+        assertTrue(created);
+    }
+
+    @Test
+    @DisplayName("Тест на невозможность создания 2 одинаковых курьеров")
     public void failToCreateCourierWithExistingData() {
 
-        NewCourier newCourier = NewCourier.getRandom();
-        courierClient.create(newCourier);
+        CourierDataGenerator newCourier = CourierDataGenerator.getRandomCourier();
+        courierClient.createCourier(newCourier);
 
         CourierData courierData = CourierData.from(newCourier);
-        int courierId = courierClient.login(courierData);
+        courierId = courierClient.login(courierData);
 
-        courierClient.createSameCourier(courierData);
-
-        courierClient.delete(courierId);
+        String expected = "Этот логин уже используется. Попробуйте другой.";
+        String actual = courierClient.createSameCourier(courierData);
+        assertEquals(expected, actual);
     }
 
     @Test
-    @DisplayName("тест на проверку обязательности поля login при создании курьера")
+    @DisplayName("Тест на проверку обязательности поля login при создании курьера")
     public void failToCreateCourierWithoutLogin() {
 
-        NewCourierWithoutLogin newCourierWithoutLogin = NewCourierWithoutLogin.getRandomCourierWithoutLogin();
-        courierClient.createCourierWithoutLogin(newCourierWithoutLogin);
+        CourierDataGenerator newCourierWithoutRequiredParameter = CourierDataGenerator.getRandomCourier();
+        newCourierWithoutRequiredParameter.setLogin(null);
+        String actual = courierClient.createCourierWithoutRequiredParameter(newCourierWithoutRequiredParameter);
+
+        String expected = "Недостаточно данных для создания учетной записи";
+        assertEquals(expected, actual);
     }
 
     @Test
-    @DisplayName("тест на проверку обязательности поля password при создании курьера")
+    @DisplayName("Тест на проверку обязательности поля password при создании курьера")
     public void failToCreateCourierWithoutPassword() {
 
-        NewCourierWithoutPassword newCourierWithoutPassword = NewCourierWithoutPassword.getRandomCourierWithoutPassword();
-        courierClient.createCourierWithoutPassword(newCourierWithoutPassword);
+        CourierDataGenerator newCourierWithoutRequiredParameter = CourierDataGenerator.getRandomCourier();
+        newCourierWithoutRequiredParameter.setPassword(null);
+        String actual = courierClient.createCourierWithoutRequiredParameter(newCourierWithoutRequiredParameter);
+
+        String expected = "Недостаточно данных для создания учетной записи";
+        assertEquals(expected, actual);
     }
 
     // тест падает из-за ошибки документации API в части обязательности поля firstName
     @Test
-    @DisplayName("тест на проверку обязательности поля firstName при создании курьера")
+    @DisplayName("Тест на проверку обязательности поля firstName при создании курьера")
     public void failToCreateCourierWithoutFirstName() {
 
-        NewCourierWithoutFirstName newCourierWithoutFirstName = NewCourierWithoutFirstName.getRandomCourierWithoutFirstName();
-        courierClient.createCourierWithoutFirstName(newCourierWithoutFirstName);
+        CourierDataGenerator newCourierWithoutRequiredParameter = CourierDataGenerator.getRandomCourier();
+        newCourierWithoutRequiredParameter.setFirstName(null);
+        String actual = courierClient.createCourierWithoutRequiredParameter(newCourierWithoutRequiredParameter);
+
+        String expected = "Недостаточно данных для создания учетной записи";
+        assertEquals(expected, actual);
     }
 
     @Test
-    @DisplayName("тест на проверку обязательности поля login при логине курьера")
+    @DisplayName("Тест на проверку обязательности поля login при логине курьера")
     public void failToLoginCourierWithoutLogin() {
 
-        NewCourier newCourier = NewCourier.getRandom();
-        courierClient.create(newCourier);
+        CourierDataGenerator newCourier = CourierDataGenerator.getRandomCourier();
+        courierClient.createCourier(newCourier);
 
         CourierData courierData = CourierData.from(newCourier);
-        int courierId = courierClient.login(courierData);
+        courierId = courierClient.login(courierData);
 
-        CourierDataWithoutLogin courierDataWithoutLogin = CourierDataWithoutLogin.from(newCourier);
-        courierClient.loginWithoutLogin(courierDataWithoutLogin);
+        courierData.setLogin(null);
+        String actual = courierClient.loginCourierWithoutRequiredParameter(courierData);
 
-        courierClient.delete(courierId);
+        String expected = "Недостаточно данных для входа";
+        assertEquals(expected, actual);
     }
 
     // тест падает из-за ошибки документации API в части ответа при запросе без обязательного поля password
     @Test
-    @DisplayName("тест на проверку обязательности поля password при логине курьера")
+    @DisplayName("Тест на проверку обязательности поля password при логине курьера")
     public void failToLoginCourierWithoutPassword() {
 
-        NewCourier newCourier = NewCourier.getRandom();
-        courierClient.create(newCourier);
+        CourierDataGenerator newCourier = CourierDataGenerator.getRandomCourier();
+        courierClient.createCourier(newCourier);
 
         CourierData courierData = CourierData.from(newCourier);
-        int courierId = courierClient.login(courierData);
+        courierId = courierClient.login(courierData);
 
-        CourierDataWithoutPassword courierDataWithoutPassword = CourierDataWithoutPassword.from(newCourier);
-        courierClient.loginWithoutPassword(courierDataWithoutPassword);
+        courierData.setPassword(null);
+        String actual = courierClient.loginCourierWithoutRequiredParameter(courierData);
 
-        courierClient.delete(courierId);
+        String expected = "Недостаточно данных для входа";
+        assertEquals(expected, actual);
     }
 
     @Test
-    @DisplayName("тест на проверку логина с несуществующей парой логин-пароль")
+    @DisplayName("Тест на проверку логина с несуществующей парой логин-пароль")
     public void failToLoginCourierWithNonExistingData() {
 
-        NewCourierForLogin newCourierForLogin = NewCourierForLogin.getRandom();
-        courierClient.loginCourierWithNonExistingData(newCourierForLogin);
+        CourierDataGenerator newCourier = CourierDataGenerator.getRandomCourier();
+        String actual = courierClient.loginCourierWithNonExistingData(newCourier);
+
+        String expected = "Учетная запись не найдена";
+        assertEquals(expected, actual);
     }
 }

@@ -1,4 +1,8 @@
-package ru.yandex.scooter.api.pojo;
+package ru.yandex.scooter.api.client;
+
+import io.restassured.response.ValidatableResponse;
+import ru.yandex.scooter.api.model.CourierData;
+import ru.yandex.scooter.api.util.CourierDataGenerator;
 
 import static io.restassured.RestAssured.given;
 
@@ -7,7 +11,7 @@ public class CourierClient {
     private final String BASE_URL = "https://qa-scooter.praktikum-services.ru/api/v1";
     private final String COURIER = "/courier";
 
-    public boolean create(NewCourier newCourier) {
+    public boolean createCourier(CourierDataGenerator newCourier) {
 
         return given().log().all()
                 .header("Content-type", "application/json")
@@ -37,42 +41,12 @@ public class CourierClient {
                 .path("message");
     }
 
-    public String createCourierWithoutLogin(NewCourierWithoutLogin newCourierWithoutLogin) {
+    public String createCourierWithoutRequiredParameter(CourierDataGenerator newCourierWithoutRequiredParameter) {
 
         return given().log().all()
                 .header("Content-type", "application/json")
                 .baseUri(BASE_URL)
-                .body(newCourierWithoutLogin)
-                .when()
-                .post(COURIER)
-                .then().log().all()
-                .assertThat()
-                .statusCode(400)
-                .extract()
-                .path("message");
-    }
-
-    public String createCourierWithoutPassword(NewCourierWithoutPassword newCourierWithoutPassword) {
-
-        return given().log().all()
-                .header("Content-type", "application/json")
-                .baseUri(BASE_URL)
-                .body(newCourierWithoutPassword)
-                .when()
-                .post(COURIER)
-                .then().log().all()
-                .assertThat()
-                .statusCode(400)
-                .extract()
-                .path("message");
-    }
-
-    public String createCourierWithoutFirstName(NewCourierWithoutFirstName newCourierWithoutFirstName) {
-
-        return given().log().all()
-                .header("Content-type", "application/json")
-                .baseUri(BASE_URL)
-                .body(newCourierWithoutFirstName)
+                .body(newCourierWithoutRequiredParameter)
                 .when()
                 .post(COURIER)
                 .then().log().all()
@@ -97,7 +71,7 @@ public class CourierClient {
                 .path("id");
     }
 
-    public String loginCourierWithNonExistingData(NewCourierForLogin newCourierForLogin) {
+    public String loginCourierWithNonExistingData(CourierDataGenerator newCourierForLogin) {
 
         return given().log().all()
                 .header("Content-type", "application/json")
@@ -112,12 +86,12 @@ public class CourierClient {
                 .path("message");
     }
 
-    public String loginWithoutLogin(CourierDataWithoutLogin courierDataWithoutLogin) {
+    public String loginCourierWithoutRequiredParameter(CourierData courierData) {
 
         return given().log().all()
                 .header("Content-type", "application/json")
                 .baseUri(BASE_URL)
-                .body(courierDataWithoutLogin)
+                .body(courierData)
                 .when()
                 .post(COURIER + "/login")
                 .then().log().all()
@@ -127,32 +101,13 @@ public class CourierClient {
                 .path("message");
     }
 
-    public String loginWithoutPassword(CourierDataWithoutPassword courierDataWithoutPassword) {
-
-        return given().log().all()
-                .header("Content-type", "application/json")
-                .baseUri(BASE_URL)
-                .body(courierDataWithoutPassword)
-                .when()
-                .post(COURIER + "/login")
-                .then().log().all()
-                .assertThat()
-                .statusCode(400)
-                .extract()
-                .path("message");
-    }
-
-    public boolean delete(int courierId) {
+    public ValidatableResponse deleteCourier(int courierId) {
 
         return given().log().all()
                 .header("Content-type", "application/json")
                 .baseUri(BASE_URL)
                 .when()
                 .delete(COURIER + "/{courierId}", courierId)
-                .then().log().all()
-                .assertThat()
-                .statusCode(200)
-                .extract()
-                .path("ok");
+                .then().log().all();
     }
 }

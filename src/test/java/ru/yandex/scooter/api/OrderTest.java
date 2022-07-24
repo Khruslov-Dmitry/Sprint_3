@@ -4,7 +4,7 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import ru.yandex.scooter.api.pojo.OrdersClient;
+import ru.yandex.scooter.api.client.OrdersClient;
 
 import java.io.File;
 
@@ -22,7 +22,7 @@ public class OrderTest {
         this.expected = expected;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0} - файл с данными заказа, {1} - ожидаемый код ответа")
     public static Object[][] orderData() {
 
         return new Object[][] {

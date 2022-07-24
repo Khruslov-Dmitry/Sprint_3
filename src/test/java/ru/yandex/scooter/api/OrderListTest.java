@@ -2,14 +2,19 @@ package ru.yandex.scooter.api;
 
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
-import ru.yandex.scooter.api.pojo.OrdersClient;
+import ru.yandex.scooter.api.client.OrdersClient;
+
+import java.util.ArrayList;
+
+import static org.junit.Assert.assertNotNull;
 
 public class OrderListTest {
 
     @Test
-    @DisplayName("тест получения списка заказов")
+    @DisplayName("Тест получения списка заказов")
     public void getOrderList() {
 
-        OrdersClient.getOrderList();
+        ArrayList orderList = OrdersClient.getOrderList();
+        assertNotNull(orderList);
     }
 }

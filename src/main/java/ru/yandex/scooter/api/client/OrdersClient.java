@@ -1,6 +1,7 @@
-package ru.yandex.scooter.api.pojo;
+package ru.yandex.scooter.api.client;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import static io.restassured.RestAssured.given;
 
@@ -24,9 +25,9 @@ public class OrdersClient {
                 .statusCode();
     }
 
-    public static void getOrderList() {
+    public static ArrayList getOrderList() {
 
-        given().log().all()
+        return given().log().all()
                 .header("Content-type", "application/json")
                 .baseUri(BASE_URL)
                 .when()
