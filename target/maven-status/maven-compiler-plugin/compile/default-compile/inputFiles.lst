@@ -1,10 +1,4 @@
-C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\pojo\CourierDataWithoutPassword.java
-C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\pojo\NewCourierWithoutLogin.java
-C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\pojo\NewCourierForLogin.java
-C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\pojo\CourierDataWithoutLogin.java
-C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\pojo\NewCourierWithoutFirstName.java
-C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\pojo\OrdersClient.java
-C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\pojo\CourierClient.java
-C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\pojo\CourierData.java
-C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\pojo\NewCourier.java
-C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\pojo\NewCourierWithoutPassword.java
+C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\util\CourierDataGenerator.java
+C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\model\CourierData.java
+C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\client\OrdersClient.java
+C:\Program Files\Git\Sprint_3\src\main\java\ru\yandex\scooter\api\client\CourierClient.java
