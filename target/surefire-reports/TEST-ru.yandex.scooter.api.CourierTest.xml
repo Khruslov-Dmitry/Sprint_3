@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ru.yandex.scooter.api.CourierTest" time="68.141" tests="8" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ru.yandex.scooter.api.CourierTest" time="68.695" tests="8" errors="0" skipped="0" failures="2">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk11.0.14_10\bin"/>
-    <property name="sun.java.command" value="C:\Users\XXX\AppData\Local\Temp\surefire9576594897418446242\surefirebooter8396401553560308243.jar C:\Users\XXX\AppData\Local\Temp\surefire9576594897418446242 2022-07-26T21-58-34_963-jvmRun1 surefire3799264224352200441tmp surefire_04542403434655158529tmp"/>
+    <property name="sun.java.command" value="C:\Users\XXX\AppData\Local\Temp\surefire11342659273553084465\surefirebooter1431065644019827587.jar C:\Users\XXX\AppData\Local\Temp\surefire11342659273553084465 2022-07-26T22-23-32_600-jvmRun1 surefire5416673625095617814tmp surefire_017240601178182330004tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Program Files\Git\Sprint_3\target\test-classes;C:\Program Files\Git\Sprint_3\target\classes;C:\Users\XXX\.m2\repository\io\rest-assured\rest-assured\5.1.1\rest-assured-5.1.1.jar;C:\Users\XXX\.m2\repository\org\apache\groovy\groovy\4.0.1\groovy-4.0.1.jar;C:\Users\XXX\.m2\repository\org\apache\groovy\groovy-xml\4.0.1\groovy-xml-4.0.1.jar;C:\Users\XXX\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\XXX\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\XXX\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\XXX\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\XXX\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\XXX\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\XXX\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\XXX\.m2\repository\io\rest-assured\json-path\5.1.1\json-path-5.1.1.jar;C:\Users\XXX\.m2\repository\org\apache\groovy\groovy-json\4.0.1\groovy-json-4.0.1.jar;C:\Users\XXX\.m2\repository\io\rest-assured\rest-assured-common\5.1.1\rest-assured-common-5.1.1.jar;C:\Users\XXX\.m2\repository\io\rest-assured\xml-path\5.1.1\xml-path-5.1.1.jar;C:\Users\XXX\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\XXX\.m2\repository\com\google\code\gson\gson\2.9.0\gson-2.9.0.jar;C:\Users\XXX\.m2\repository\io\qameta\allure\allure-junit4\2.18.1\allure-junit4-2.18.1.jar;C:\Users\XXX\.m2\repository\io\qameta\allure\allure-java-commons\2.18.1\allure-java-commons-2.18.1.jar;C:\Users\XXX\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\XXX\.m2\repository\io\qameta\allure\allure-model\2.18.1\allure-model-2.18.1.jar;C:\Users\XXX\.m2\repository\io\qameta\allure\allure-rest-assured\2.18.1\allure-rest-assured-2.18.1.jar;C:\Users\XXX\.m2\repository\io\qameta\allure\allure-attachments\2.18.1\allure-attachments-2.18.1.jar;C:\Users\XXX\.m2\repository\org\freemarker\freemarker\2.3.31\freemarker-2.3.31.jar;C:\Users\XXX\.m2\repository\org\projectlombok\lombok\1.18.24\lombok-1.18.24.jar;C:\Users\XXX\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\XXX\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\XXX\AppData\Local\Temp\surefire9576594897418446242\surefirebooter8396401553560308243.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\XXX\AppData\Local\Temp\surefire11342659273553084465\surefirebooter1431065644019827587.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.14.1+10-LTS"/>
@@ -62,11 +62,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="checkCourierCreationAndLogin" classname="ru.yandex.scooter.api.CourierTest" time="4.799"/>
-  <testcase name="failToLoginCourierWithNonExistingData" classname="ru.yandex.scooter.api.CourierTest" time="0.363"/>
-  <testcase name="failToCreateCourierWithoutPassword" classname="ru.yandex.scooter.api.CourierTest" time="0.293"/>
-  <testcase name="failToLoginCourierWithoutLogin" classname="ru.yandex.scooter.api.CourierTest" time="0.547"/>
-  <testcase name="failToCreateCourierWithoutFirstName" classname="ru.yandex.scooter.api.CourierTest" time="0.282">
+  <testcase name="checkCourierCreationAndLogin" classname="ru.yandex.scooter.api.CourierTest" time="4.527"/>
+  <testcase name="failToLoginCourierWithNonExistingData" classname="ru.yandex.scooter.api.CourierTest" time="0.322"/>
+  <testcase name="failToCreateCourierWithoutPassword" classname="ru.yandex.scooter.api.CourierTest" time="0.268"/>
+  <testcase name="failToLoginCourierWithoutLogin" classname="ru.yandex.scooter.api.CourierTest" time="0.456"/>
+  <testcase name="failToCreateCourierWithoutFirstName" classname="ru.yandex.scooter.api.CourierTest" time="0.876">
     <failure message="1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;201&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <400> but was <201>.
@@ -86,18 +86,18 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "login": "TzMdU2su2m",
-    "password": "q5CfXAEjeP"
+    "login": "hgYtvahWfc",
+    "password": "VnA7cIFAgQ"
 }
 HTTP/1.1 201 Created
 Access-Control-Allow-Origin: *
 Content-Length: 11
 Content-Type: application/json; charset=utf-8
-Date: Tue, 26 Jul 2022 18:58:42 GMT
+Date: Tue, 26 Jul 2022 19:23:39 GMT
 ETag: W/"b-Ai2R8hgEarLmHKwesT1qcY913ys"
-Set-Cookie: _yasc=DmY98wqEARD0ggWgiuXJVPgM1nrhT2xyAmX+AzW43m1lwg==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 18:58:42 GMT; secure
+Set-Cookie: _yasc=Xf8sG4RZ9PC4Z0tjJcUj/ooT85BBlOVofitxXY1GLgKSSw==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 19:23:39 GMT; secure
 X-Powered-By: Express
-X-Request-Id: 1658861922499018-6160775248217051740
+X-Request-Id: 1658863419566787-16061813735836907309
 
 {
     "ok": true
@@ -118,11 +118,11 @@ HTTP/1.1 404 Not Found
 Access-Control-Allow-Origin: *
 Content-Length: 64
 Content-Type: application/json; charset=utf-8
-Date: Tue, 26 Jul 2022 18:58:42 GMT
+Date: Tue, 26 Jul 2022 19:23:40 GMT
 ETag: W/"40-tLkp/o3TzLGA5pEmOZ4MEpfo3Lo"
-Set-Cookie: _yasc=AMAR2Z4yFMfkmd3BiAFsSgYshGxtU4FevJhz7ia81pWddg==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 18:58:42 GMT; secure
+Set-Cookie: _yasc=AWz8r5iTX4KQJY0DDCJJCWm1fAlcPOFUVBeCrP0gfVVXKQ==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 19:23:40 GMT; secure
 X-Powered-By: Express
-X-Request-Id: 1658861922638275-14066265420929508191
+X-Request-Id: 1658863420220034-17296754112474023136
 
 {
     "code": 404,
@@ -130,7 +130,7 @@ X-Request-Id: 1658861922638275-14066265420929508191
 }
 ]]></system-out>
   </testcase>
-  <testcase name="failToLoginCourierWithoutPassword" classname="ru.yandex.scooter.api.CourierTest" time="60.607">
+  <testcase name="failToLoginCourierWithoutPassword" classname="ru.yandex.scooter.api.CourierTest" time="61.191">
     <failure message="1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;504&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <400> but was <504>.
@@ -150,19 +150,19 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "login": "ocrPcrphum",
-    "password": "dbdkDu3yeO",
-    "firstName": "oPLFAbbcue"
+    "login": "pXdmKBZ0CN",
+    "password": "l9XKZKSatH",
+    "firstName": "gkPEoOuYWn"
 }
 HTTP/1.1 201 Created
 Access-Control-Allow-Origin: *
 Content-Length: 11
 Content-Type: application/json; charset=utf-8
-Date: Tue, 26 Jul 2022 18:58:42 GMT
+Date: Tue, 26 Jul 2022 19:23:40 GMT
 ETag: W/"b-Ai2R8hgEarLmHKwesT1qcY913ys"
-Set-Cookie: _yasc=vs6zzFinudu00qLyrvTHyx8v/Sm5WATlG5PxzG5DA9wxpA==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 18:58:42 GMT; secure
+Set-Cookie: _yasc=uEjsrOnIhQfYXuaweWpKbDrPylSXqBMpvYqkUsK7kY8lug==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 19:23:40 GMT; secure
 X-Powered-By: Express
-X-Request-Id: 1658861922793162-333148396020290595
+X-Request-Id: 1658863420894843-704845651337903998
 
 {
     "ok": true
@@ -180,21 +180,21 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "login": "ocrPcrphum",
-    "password": "dbdkDu3yeO"
+    "login": "pXdmKBZ0CN",
+    "password": "l9XKZKSatH"
 }
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Content-Length: 12
 Content-Type: application/json; charset=utf-8
-Date: Tue, 26 Jul 2022 18:58:43 GMT
-ETag: W/"c-s9FoN2bmlSXhlEX8ttacTGdFN4A"
-Set-Cookie: _yasc=vKl+B/ZVRaOXM4gNLUD7crIeUHQnwtynWYVe6JUxYZUaDw==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 18:58:42 GMT; secure
+Date: Tue, 26 Jul 2022 19:23:41 GMT
+ETag: W/"c-GsAvsfQokff7bYbrP2y0e4RzHOs"
+Set-Cookie: _yasc=yZErEcrOewkmB5rrIOJwgtQEpqYQPIxtq7bVB+NUerjJyg==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 19:23:41 GMT; secure
 X-Powered-By: Express
-X-Request-Id: 1658861922959547-7178188500559202826
+X-Request-Id: 1658863421158408-7942365817238271147
 
 {
-    "id": 97292
+    "id": 97297
 }
 Request method:	POST
 Request URI:	https://qa-scooter.praktikum-services.ru/api/v1/courier/login
@@ -209,16 +209,16 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "login": "ocrPcrphum"
+    "login": "pXdmKBZ0CN"
 }
 HTTP/1.1 504 Gateway time out
 Content-Length: 19
-Set-Cookie: _yasc=8afx04HdkuAdkyXhEV9e4EhuNinf6OCenOdQEa1tbVij0A==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 18:58:43 GMT; secure
-X-Request-Id: 1658861923131459-12847552628006780449
+Set-Cookie: _yasc=W7bXMGch+1LgyIzM7tazo20awmWeUnP73jjE4P/+0QWJUA==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 19:23:41 GMT; secure
+X-Request-Id: 1658863421314526-15029354265867320291
 
 Service unavailable
 Request method:	DELETE
-Request URI:	https://qa-scooter.praktikum-services.ru/api/v1/courier/97292
+Request URI:	https://qa-scooter.praktikum-services.ru/api/v1/courier/97297
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -233,17 +233,17 @@ HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Content-Length: 11
 Content-Type: application/json; charset=utf-8
-Date: Tue, 26 Jul 2022 18:59:43 GMT
+Date: Tue, 26 Jul 2022 19:24:41 GMT
 ETag: W/"b-Ai2R8hgEarLmHKwesT1qcY913ys"
-Set-Cookie: _yasc=+mpF+9LdK2x8KNECcnWuOPug09VmHxI2fuK0pitO5V4Vtg==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 18:59:43 GMT; secure
+Set-Cookie: _yasc=GoX7TUJw6TommyrFWb+1wCdogLGDEpvfMzUsLB1aTvyvzQ==; domain=.praktikum-services.ru; path=/; expires=Thu, 25-Aug-2022 19:24:41 GMT; secure
 X-Powered-By: Express
-X-Request-Id: 1658861983244628-1504143843175910812
+X-Request-Id: 1658863481471407-1230759070063432057
 
 {
     "ok": true
 }
 ]]></system-out>
   </testcase>
-  <testcase name="failToCreateCourierWithoutLogin" classname="ru.yandex.scooter.api.CourierTest" time="0.279"/>
-  <testcase name="failToCreateCourierWithExistingData" classname="ru.yandex.scooter.api.CourierTest" time="0.648"/>
+  <testcase name="failToCreateCourierWithoutLogin" classname="ru.yandex.scooter.api.CourierTest" time="0.269"/>
+  <testcase name="failToCreateCourierWithExistingData" classname="ru.yandex.scooter.api.CourierTest" time="0.514"/>
 </testsuite>
