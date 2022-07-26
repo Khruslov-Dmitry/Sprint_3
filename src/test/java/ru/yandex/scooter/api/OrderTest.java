@@ -1,5 +1,6 @@
 package ru.yandex.scooter.api;
 
+import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,11 +34,17 @@ public class OrderTest {
         };
     }
 
+    @Step("Проверка кода ответа на запрос создания заказа")
+    public void checkOrderCreation(int expected, int actual) {
+
+        assertEquals(expected, actual);
+    }
+
     @Test
     @DisplayName("параметризованный тест создания заказа")
     public void createNewOrder() {
 
         int actual = OrdersClient.create(json);
-        assertEquals(expected, actual);
+        checkOrderCreation(expected, actual);
     }
 }

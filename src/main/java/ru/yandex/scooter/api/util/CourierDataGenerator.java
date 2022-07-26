@@ -1,5 +1,6 @@
 package ru.yandex.scooter.api.util;
 
+import io.qameta.allure.Step;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ public class CourierDataGenerator {
     private String password;
     private String firstName;
 
+    @Step("Создание рандомных данных для курьера (логин, пароль, имя)")
     public static CourierDataGenerator getRandomCourier() {
 
         String login = RandomStringUtils.randomAlphanumeric(10);

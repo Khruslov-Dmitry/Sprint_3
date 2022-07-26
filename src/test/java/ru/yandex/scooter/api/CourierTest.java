@@ -1,5 +1,6 @@
 package ru.yandex.scooter.api;
 
+import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
@@ -34,9 +35,14 @@ public class CourierTest {
 
         CourierDataGenerator newCourier = CourierDataGenerator.getRandomCourier();
         boolean created = courierClient.createCourier(newCourier);
+        checkCourierCreation(created);
 
         CourierData courierData = CourierData.from(newCourier);
         courierId = courierClient.login(courierData);
+    }
+
+    @Step("Проверка ответа на запрос создания курьера")
+    public void checkCourierCreation(boolean created) {
 
         assertTrue(created);
     }
@@ -53,6 +59,12 @@ public class CourierTest {
 
         String expected = "Этот логин уже используется. Попробуйте другой.";
         String actual = courierClient.createSameCourier(courierData);
+        checkErrorTextWhenTryingToCreateCourierWithExistingData(expected, actual);
+    }
+
+    @Step("Проверка ошибки при попытке создания 2 одинаковых курьеров")
+    public void checkErrorTextWhenTryingToCreateCourierWithExistingData(String expected, String actual) {
+
         assertEquals(expected, actual);
     }
 
@@ -65,6 +77,12 @@ public class CourierTest {
         String actual = courierClient.createCourierWithoutRequiredParameter(newCourierWithoutRequiredParameter);
 
         String expected = "Недостаточно данных для создания учетной записи";
+        checkErrorTextWhenTryingToCreateCourierWithoutRequiredParameter(expected, actual);
+    }
+
+    @Step("Проверка ошибки при попытке создания курьера без одного из обязательных параметров")
+    public void checkErrorTextWhenTryingToCreateCourierWithoutRequiredParameter(String expected, String actual) {
+
         assertEquals(expected, actual);
     }
 
@@ -77,7 +95,7 @@ public class CourierTest {
         String actual = courierClient.createCourierWithoutRequiredParameter(newCourierWithoutRequiredParameter);
 
         String expected = "Недостаточно данных для создания учетной записи";
-        assertEquals(expected, actual);
+        checkErrorTextWhenTryingToCreateCourierWithoutRequiredParameter(expected, actual);
     }
 
     // тест падает из-за ошибки документации API в части обязательности поля firstName
@@ -90,7 +108,7 @@ public class CourierTest {
         String actual = courierClient.createCourierWithoutRequiredParameter(newCourierWithoutRequiredParameter);
 
         String expected = "Недостаточно данных для создания учетной записи";
-        assertEquals(expected, actual);
+        checkErrorTextWhenTryingToCreateCourierWithoutRequiredParameter(expected, actual);
     }
 
     @Test
@@ -107,7 +125,7 @@ public class CourierTest {
         String actual = courierClient.loginCourierWithoutRequiredParameter(courierData);
 
         String expected = "Недостаточно данных для входа";
-        assertEquals(expected, actual);
+        checkErrorTextWhenTryingToLoginCourierWithoutRequiredParameter(expected, actual);
     }
 
     // тест падает из-за ошибки документации API в части ответа при запросе без обязательного поля password
@@ -125,6 +143,12 @@ public class CourierTest {
         String actual = courierClient.loginCourierWithoutRequiredParameter(courierData);
 
         String expected = "Недостаточно данных для входа";
+        checkErrorTextWhenTryingToLoginCourierWithoutRequiredParameter(expected, actual);
+    }
+
+    @Step("Проверка ошибки при попытке логина без одного из обязательных параметров")
+    public void checkErrorTextWhenTryingToLoginCourierWithoutRequiredParameter(String expected, String actual) {
+
         assertEquals(expected, actual);
     }
 
@@ -136,6 +160,12 @@ public class CourierTest {
         String actual = courierClient.loginCourierWithNonExistingData(newCourier);
 
         String expected = "Учетная запись не найдена";
+        checkErrorTextWhenTryingToLoginCourierWithNonExistingData(expected, actual);
+    }
+
+    @Step("Проверка ошибки при попытке логина с несуществующей парой логин-пароль")
+    public void checkErrorTextWhenTryingToLoginCourierWithNonExistingData(String expected, String actual) {
+
         assertEquals(expected, actual);
     }
 }

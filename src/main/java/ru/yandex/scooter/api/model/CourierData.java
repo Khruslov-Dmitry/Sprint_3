@@ -1,5 +1,6 @@
 package ru.yandex.scooter.api.model;
 
+import io.qameta.allure.Step;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class CourierData {
         this.password = newCourier.getPassword();
     }
 
+    @Step("Получение данных созданного курьера для последующего логина")
     public static CourierData from(CourierDataGenerator newCourier) {
 
         return new CourierData(newCourier);

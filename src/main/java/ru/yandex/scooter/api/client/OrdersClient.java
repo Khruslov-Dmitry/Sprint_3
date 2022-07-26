@@ -1,5 +1,7 @@
 package ru.yandex.scooter.api.client;
 
+import io.qameta.allure.Step;
+
 import java.io.File;
 import java.util.ArrayList;
 
@@ -10,6 +12,7 @@ public class OrdersClient {
     private static final String BASE_URL = "https://qa-scooter.praktikum-services.ru/api/v1";
     private static final String ORDERS = "/orders";
 
+    @Step("Отправка POST запроса на эндпоинт /orders для создания заказа")
     public static int create(File json) {
 
         return given().log().all()
@@ -25,6 +28,7 @@ public class OrdersClient {
                 .statusCode();
     }
 
+    @Step("Отправка GET запроса на эндпоинт /orders для получения списка заказов")
     public static ArrayList getOrderList() {
 
         return given().log().all()
