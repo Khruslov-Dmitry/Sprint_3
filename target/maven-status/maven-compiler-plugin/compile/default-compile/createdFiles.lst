@@ -1,0 +1,4 @@
+ru\yandex\scooter\api\client\OrdersClient.class
+ru\yandex\scooter\api\client\CourierClient.class
+ru\yandex\scooter\api\util\CourierDataGenerator.class
+ru\yandex\scooter\api\model\CourierData.class
